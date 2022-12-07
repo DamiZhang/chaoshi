@@ -8,14 +8,14 @@ public class Frame extends JFrame {
     String Iname;
     Admin admin=new Admin();
     public Frame(){
-        setTitle("超市管理系统");
-        JMenu jm1=new JMenu("商品信息");
-        JMenu jm2=new JMenu("商品管理");
-        JMenuItem jmi1=new JMenu("进货商品信息");
-        JMenuItem jmi2=new JMenu("商品交易信息");
-        JMenuItem jmi3=new JMenu("上架商品");
-        JMenuItem jmi4=new JMenu("下架商品");
-        JMenuItem jmi5=new JMenu("交易商品");
+        setTitle("Merchandise Management System");
+        JMenu jm1=new JMenu("Product Information");
+        JMenu jm2=new JMenu("Product Adjustment");
+        JMenuItem jmi1=new JMenu("Storage");
+        JMenuItem jmi2=new JMenu("Transaction Record");
+        JMenuItem jmi3=new JMenu("Put on");
+        JMenuItem jmi4=new JMenu("Take off");
+        JMenuItem jmi5=new JMenu("Transaction now！");
         jm1.add(jmi1);
         jm1.add(jmi2);
         jm2.add(jmi3);

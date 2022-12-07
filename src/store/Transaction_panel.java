@@ -27,7 +27,7 @@ public class Transaction_panel extends JPanel {
                     str[i][4]=res.getString("Oname");
                     res.next();
                 }
-                String []name={"编号","交易时间","交易数量","进货/售货","商品名称"};
+                String []name={"No.","Time","Amount","Buy/Sale","Product Name"};
                 JTable jt=new JTable(str,name);
                 jt.setPreferredScrollableViewportSize(new Dimension(350,200));
                 JScrollPane jsp=new JScrollPane(jt);

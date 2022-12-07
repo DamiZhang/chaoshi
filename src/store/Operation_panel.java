@@ -12,14 +12,14 @@ public class Operation_panel extends JPanel {
     public String username;
     public Operation_panel(String username){
         this.username=username;
-        JLabel l1=new JLabel("选择进售货");
-        String []str1={"进货","销售"};
+        JLabel l1=new JLabel("Buy/Sale?");
+        String []str1={"Buy","Sale"};
         JComboBox jcb1=new JComboBox(str1);
-        JLabel l2=new JLabel("选择商品");
+        JLabel l2=new JLabel("Type");
         JComboBox jcb2=new JComboBox(new JDBC().str2);
-        JLabel l3=new JLabel("选择件数");
+        JLabel l3=new JLabel("Amount");
         JTextField jtf=new JTextField(20);
-        JButton b=new JButton("确认");
+        JButton b=new JButton("Confirm");
         l1.setBounds(20,20,70,30);
         jcb1.setBounds(120,20,100,30);
         l2.setBounds(20,80,70,30);
@@ -42,7 +42,7 @@ public class Operation_panel extends JPanel {
             String sj=jdbc.shou.get(str4);
             BigDecimal bd1=new BigDecimal(str2).multiply(new BigDecimal(jj));
             BigDecimal bd2=new BigDecimal(str2).multiply(new BigDecimal(sj));
-            if (str3.equals("进货")){
+            if (str3.equals("Buy")){
                 sum=(String.valueOf(new BigDecimal(sum).subtract(bd1)));
             }else {
                 sum=String.valueOf(new BigDecimal(sum).add(bd2));
@@ -53,7 +53,7 @@ public class Operation_panel extends JPanel {
             System.out.println(url2);
             new Transaction(url1);
             new Transaction(url2);
-            JOptionPane.showMessageDialog(null,"交易成功","提示",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Transaction Successfully","Notification",JOptionPane.INFORMATION_MESSAGE);
         });
         add(l1);
         add(l2);

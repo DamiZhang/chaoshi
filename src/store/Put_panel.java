@@ -18,17 +18,17 @@ public class Put_panel extends JPanel {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        JLabel l1=new JLabel("商品名称:");
-        JLabel l2=new JLabel("进   价:");
-        JLabel l3=new JLabel("售   价:");
-        JLabel l4=new JLabel("是否打折:");
+        JLabel l1=new JLabel("Product Name:");
+        JLabel l2=new JLabel("Buy-in Price:");
+        JLabel l3=new JLabel("Saling Price:");
+        JLabel l4=new JLabel("Discount:");
         JTextField jtf1=new JTextField(20);
         JTextField jtf2=new JTextField(20);
         JTextField jtf3=new JTextField(20);
-        JRadioButton jrb1=new JRadioButton("是");
-        JRadioButton jrb2=new JRadioButton("否");
+        JRadioButton jrb1=new JRadioButton("Yes");
+        JRadioButton jrb2=new JRadioButton("No");
         jrb2.setSelected(true);
-        JButton b=new JButton("确认");
+        JButton b=new JButton("Confirm");
         ButtonGroup bg=new ButtonGroup();
         bg.add(jrb1);
         bg.add(jrb2);
@@ -58,11 +58,11 @@ public class Put_panel extends JPanel {
             String Jprice=jtf2.getText();
             String Sprice=jtf3.getText();
             String bool;
-            if(jrb1.isSelected())bool="是";
-            else bool="否";
+            if(jrb1.isSelected())bool="Yes";
+            else bool="No";
             String url="insert into store values (null, '"+name+"', '"+Jprice+"', '"+Sprice+"' ,'"+bool+"')";
             new Transaction(url);
-            JOptionPane.showMessageDialog(null,"已上架","提示",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"On the shelf now!","Notification",JOptionPane.INFORMATION_MESSAGE);
         });
     }
 }

@@ -27,7 +27,7 @@ public class commodityPanel extends JPanel {
                     str[i][4]=res.getString("Discount");
                     res.next();
                 }
-                String []name={"id","商品名","进价","售价","是否打折"};
+                String []name={"No.","Product Name","BP","SP","Discount?"};
                 JTable jt=new JTable(str,name);
                 jt.setPreferredScrollableViewportSize(new Dimension(350,200));
                 JScrollPane jsp=new JScrollPane(jt);
