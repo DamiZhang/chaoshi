@@ -1,6 +1,6 @@
 package store;
 
-public class operator { //Use to set all the variables
+public class operator { //Use to set all the variables needed when log in
     int id;
     String name;
     String password;
