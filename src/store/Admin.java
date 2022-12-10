@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Admin {
+
     public Map<String,String> map=new HashMap<>();
     public List<operator> list=new ArrayList<>();
-    public Admin(){
+    public Admin(){//Use to connect the account info from sql to the frontend
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (
@@ -18,7 +19,7 @@ public class Admin {
                 PreparedStatement ps = c.prepareStatement("select *from operator",ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE);
 
-                ResultSet res= ps.executeQuery();//获取的结果
+                ResultSet res= ps.executeQuery();//The final result
                 res.last();
                 int row=res.getRow();
                 res.beforeFirst();

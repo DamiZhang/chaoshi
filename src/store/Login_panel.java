@@ -3,7 +3,7 @@ package store;
 import javax.swing.*;
 import java.awt.*;
 
-public class Login_panel extends JPanel {
+public class Login_panel extends JPanel { //set up the look of Log in page
     public JButton b;
     public JTextField jtf;
     public JPasswordField jwf;

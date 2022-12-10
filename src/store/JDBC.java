@@ -9,7 +9,7 @@ public class JDBC {
     public  String[]str2;
     public Map<String,String> jin=new HashMap<>();
     public Map<String,String> shou=new HashMap<>();
-    public  JDBC(){
+    public  JDBC(){ //Connect the product information from sql to front end
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (
@@ -17,7 +17,7 @@ public class JDBC {
                             "root", "root")) {
                 PreparedStatement ps = c.prepareStatement("select *from store",ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE);
-                ResultSet res= ps.executeQuery();//获取的结果
+                ResultSet res= ps.executeQuery();//The result you got
                 res.last();
                 int row=res.getRow();
                 res.beforeFirst();

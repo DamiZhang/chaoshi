@@ -5,7 +5,7 @@ import java.awt.*;
 import java.sql.*;
 
 public class Transaction_panel extends JPanel {
-    public Transaction_panel(){//销售面板
+    public Transaction_panel(){//This is the sales panel shows the transaction information imported from the sql
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (
@@ -13,7 +13,7 @@ public class Transaction_panel extends JPanel {
                             "root", "root")) {
                 PreparedStatement ps = c.prepareStatement("select *from shell",ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE);
-                ResultSet res= ps.executeQuery();//获取的结果
+                ResultSet res= ps.executeQuery();
                 res.last();
                 int row=res.getRow();
                 res.beforeFirst();

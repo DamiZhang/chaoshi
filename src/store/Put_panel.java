@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Put_panel extends JPanel {
-    public Put_panel(){
+    public Put_panel(){//set up all the functions and variables in the put on the shelf panel
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -14,7 +14,7 @@ public class Put_panel extends JPanel {
         }
         try {
             Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/chaoshi?serverTimezone=GMT%2b8",
-                    "root", "root");
+                    "root", "root");//try to connect to the sql
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -60,7 +60,7 @@ public class Put_panel extends JPanel {
             String bool;
             if(jrb1.isSelected())bool="Yes";
             else bool="No";
-            String url="insert into store values (null, '"+name+"', '"+Jprice+"', '"+Sprice+"' ,'"+bool+"')";
+            String url="insert into store values (null, '"+name+"', '"+Jprice+"', '"+Sprice+"' ,'"+bool+"')";//split the text
             new Transaction(url);
             JOptionPane.showMessageDialog(null,"On the shelf now!","Notification",JOptionPane.INFORMATION_MESSAGE);
         });

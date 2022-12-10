@@ -5,7 +5,7 @@ import java.awt.*;
 import java.sql.*;
 
 public class commodityPanel extends JPanel {
-    public commodityPanel(){
+    public commodityPanel(){//all the outlook of the storage page
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (
@@ -13,7 +13,7 @@ public class commodityPanel extends JPanel {
                             "root", "root")) {
                 PreparedStatement ps = c.prepareStatement("select *from store", ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE);
-                ResultSet res= ps.executeQuery();//获取的结果
+                ResultSet res= ps.executeQuery();
                 res.last();
                 int row=res.getRow();
                 res.beforeFirst();
@@ -36,12 +36,7 @@ public class commodityPanel extends JPanel {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-//        JDBC jdbc=new JDBC();
-//        String []name={"id","商品名","进价","售价","是否打折"};
-//        JTable jt=new JTable(jdbc.str1,name);
-//        jt.setPreferredScrollableViewportSize(new Dimension(350,200));
-//        JScrollPane jsp=new JScrollPane(jt);
-//        add(jsp,BorderLayout.CENTER);
+
     }
 
 }

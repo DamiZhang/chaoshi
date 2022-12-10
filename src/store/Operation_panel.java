@@ -10,7 +10,7 @@ public class Operation_panel extends JPanel {
     Admin admin=new Admin();
     JDBC jdbc=new JDBC();
     public String username;
-    public Operation_panel(String username){
+    public Operation_panel(String username){//set up all the operation panel information
         this.username=username;
         JLabel l1=new JLabel("Buy/Sale?");
         String []str1={"Buy","Sale"};
@@ -31,9 +31,9 @@ public class Operation_panel extends JPanel {
             Date date=new Date();
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy:MM:dd HH-mm");
             String str= sdf.format(date);
-            String str2=jtf.getText();//个数
-            String str3= (String) jcb1.getSelectedItem();//进货/售货
-            String str4= (String) jcb2.getSelectedItem();//商品名
+            String str2=jtf.getText();//Number
+            String str3= (String) jcb1.getSelectedItem();//Buyin/Sales
+            String str4= (String) jcb2.getSelectedItem();//Commodity Name
             String sum="1";
             for (int i=0;i<admin.list.size();i++){
                 if (Objects.equals(admin.list.get(i).name, username))sum=String.valueOf(admin.list.get(i).sum);
@@ -46,7 +46,7 @@ public class Operation_panel extends JPanel {
                 sum=(String.valueOf(new BigDecimal(sum).subtract(bd1)));
             }else {
                 sum=String.valueOf(new BigDecimal(sum).add(bd2));
-            }
+            }//connect the new input to the backend
             String url1="insert into shell values (null, '"+str+"','" +str2+"','"+str3+"','" +str4+"')";
             System.out.println(username);
             String url2="update operator set sum = '"+sum+"' where  name= '"+username+"'";
