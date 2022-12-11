@@ -11,6 +11,7 @@ public class Login_panel extends JPanel { //set up the look of Log in page
         JLabel l=new JLabel("Merchandise System");
         JLabel l1=new JLabel("Username:");
         JLabel l2=new JLabel("Password:");
+        //The Default Username and Password all is 111
         jtf=new JTextField(20);
         jwf=new JPasswordField(20);
         jwf.setEchoChar('*');
